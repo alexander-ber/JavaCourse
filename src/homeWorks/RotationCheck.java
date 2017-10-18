@@ -1,4 +1,4 @@
-package ameedf.jb8223.assignments;
+package homeWorks;
 
 import java.util.Scanner;
 
@@ -49,50 +49,50 @@ public class RotationCheck {
 
 		//Get input from the user.
 		do {
-			System.out.print("Enter firstNumber [0 to 1,000,000,000]:");
+			System.out.print("Enter first number [0 to 1,000,000,000]:");
 			firstNumber = in.nextInt();
 		} while (firstNumber < 0 || firstNumber > 1000000000);
 
 		do {
-			System.out.print("Enter secondNumber [0 to 1,000,000,000 and not equal to "+firstNumber+" ]:");
+			System.out.print("Enter second number [0 to 1,000,000,000 and not equal to "+firstNumber+"]:");
 			secondNumber = in.nextInt();
 		} while (secondNumber < 0 || secondNumber > 1000000000 || firstNumber == secondNumber);
 		
 		in.close();
 		
 		//Calculate the length of the numbers
-		int firstNumberLenght = 0, tempfirstNumber = firstNumber;
-		while (tempfirstNumber > 0) {
-			tempfirstNumber = tempfirstNumber / 10;
-			firstNumberLenght++;
+		int firstNumberLength = 0, tempFirstNumber = firstNumber;
+		while (tempFirstNumber > 0) {
+			tempFirstNumber = tempFirstNumber / 10;
+			firstNumberLength++;
 		}
 
-		int secondNumberLenght = 0, tempsecondNumber = secondNumber;
-		while (tempsecondNumber > 0) {
-			tempsecondNumber = tempsecondNumber / 10;
-			secondNumberLenght++;
+		int secondNumberLength = 0, tempSecondNumber = secondNumber;
+		while (tempSecondNumber > 0) {
+			tempSecondNumber = tempSecondNumber / 10;
+			secondNumberLength++;
 		}
 		
 		//Check the length of the numbers, if not equal then exit. 
-		if(firstNumberLenght != secondNumberLenght) {
+		if(firstNumberLength != secondNumberLength) {
 			System.out.println("We cannot get from "+firstNumber+" to "+secondNumber+" by performing any number of rotations!");
 			return;
 		}
 		
 		//Init arrays for numbers by required length   
-		int[] firstNumberArray = new int[firstNumberLenght];
-		int[] secondNumberArray = new int[firstNumberLenght];
+		int[] firstNumberArray = new int[firstNumberLength];
+		int[] secondNumberArray = new int[firstNumberLength];
 		
-		tempfirstNumber = firstNumber;
-		tempsecondNumber = secondNumber;
+		tempFirstNumber = firstNumber;
+		tempSecondNumber = secondNumber;
 
 		//Move from integers to arrays
-		for (int i = firstNumberLenght; i > 0 ; i--) {
-			firstNumberArray[i-1] = tempfirstNumber % 10;
-			tempfirstNumber = tempfirstNumber / 10;
+		for (int i = firstNumberLength; i > 0 ; i--) {
+			firstNumberArray[i-1] = tempFirstNumber % 10;
+			tempFirstNumber = tempFirstNumber / 10;
 			
-			secondNumberArray[i-1] = tempsecondNumber % 10;
-			tempsecondNumber = tempsecondNumber / 10;
+			secondNumberArray[i-1] = tempSecondNumber % 10;
+			tempSecondNumber = tempSecondNumber / 10;
 		}
 		
 		//Declare needed variables
@@ -100,15 +100,26 @@ public class RotationCheck {
 		boolean numberEqual = false;
 		
 		//Check the numbers for equals
-		while( (rotationsCount <= firstNumberLenght -1 ) && !numberEqual) {
+		while( (rotationsCount <= firstNumberLength -1 ) && !numberEqual) {
+			// && !numberEqual) {
 			
-			//Rotate last digit in first number
+			//Rotate last digit in first number, first way
+			/*
 			int buf = 0;
-			for (int i = firstNumberLenght-1; i > 0 ; i--) {
+			for (int i = firstNumberLength-1; i > 0 ; i--) {
 				buf = firstNumberArray[i];
 				firstNumberArray[i] = firstNumberArray[i-1];
 				firstNumberArray[i-1] = buf;
 			}
+			*/
+			
+			//Rotate last digit in first number, second way
+			//
+			int buf = firstNumberArray[firstNumberLength-1];
+			for (int i = firstNumberLength-1; i > 0 ; i--) {
+				firstNumberArray[i] = firstNumberArray[i-1];
+			}
+			firstNumberArray[0] = buf;
 			
 			//Check if numbers equals
 			boolean digitEqual = true;
@@ -121,15 +132,15 @@ public class RotationCheck {
 			if(digitEqual) {
 				numberEqual = true;
 			}
+			
 			rotationsCount++;
 		}
 		
-		
 		//Print info message
 		if(numberEqual) {
-			System.out.println("The number " + firstNumber + " can be rotated "+rotationsCount+" time"+(rotationsCount>1?"s":"")+" to get the number " + secondNumber + "!");
+			System.out.println("\nThe number " + firstNumber + " can be rotated "+rotationsCount+" time"+(rotationsCount>1?"s":"")+" to get the number " + secondNumber + "!");
 		} else {
-			System.out.println("We cannot get from " + firstNumber + " to " + secondNumber + " by performing any number of rotations!");
+			System.out.println("\nWe cannot get from " + firstNumber + " to " + secondNumber + " by performing any number of rotations!");
 		}
    
     }

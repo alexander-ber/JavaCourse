@@ -108,7 +108,7 @@ public class GuessTheNumber {
 
 						// For each entered digit, check the all digits in generated number.
 						tmptheNumber = theNumber;
-						for (int i = 0; i < j + 1; i++) {
+						for (int i = 0; i <= j + 1; i++) {
 							tmptheNumberDigit = (int) (tmptheNumber / Math.pow(10, theNumberLength - 1 - i));
 							tmptheNumber = (int) (tmptheNumber % Math.pow(10, theNumberLength - 1 - i));
 							// If digits is same, check the position in number.
