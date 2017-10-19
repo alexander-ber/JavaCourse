@@ -150,8 +150,9 @@ public class GuessTheNumber {
 			} while (theNumber != userNumber);
 
 			// Update highScoreTable for current Player
+			// highScoreTable[userId - 1] = (int) (theNumberLength *10 / (numberOfSteps * 1.2) );
 			highScoreTable[userId - 1] = numberOfSteps;
-
+			
 			System.out.print(
 					"\nCongratulations, Player number: " + userId + "! You WIN from " + numberOfSteps + " trays!");
 

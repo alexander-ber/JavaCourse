@@ -48,23 +48,26 @@ public class Palindrome {
 		String sPart = "";
 
 		if (num == 0) {
-			System.out.println("\n Giv   en number is Zero and it's a Palindrome by difinition!");
+			System.out.println("\n Given number is Zero and it's a Palindrome by difinition!");
 			in.close();
 			return;
 		}
-
+		
+		//count number length and reverse the number
 		while (num > 0) {
 			remainder = num % 10;
 			reversedPalindromeNum = reversedPalindromeNum * 10 + remainder;
 			num = num / 10;
 			PalindromeLen++;
 		}
-
+		
+		//if reversed number == original number, so it's palindrome 
 		if (PalindromeNum == reversedPalindromeNum) {
 			num = PalindromeNum;
 			
-			//condition for check length + 1 in case of odd length [12321]
-			for (int next = 0; next < PalindromeLen / 2 + PalindromeLen % 2; next++) {
+			//condition for check length + 1 in case of odd length like: [12321]
+			int limit = PalindromeLen / 2 + PalindromeLen % 2;
+			for (int next = 0; next < limit; next++) {
 				remainder = num % 10;
 				fPart += " " + remainder;
 				sPart = remainder + " " + sPart;
