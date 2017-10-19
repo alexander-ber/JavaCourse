@@ -62,18 +62,13 @@ public class Palindrome {
 
 		if (PalindromeNum == reversedPalindromeNum) {
 			num = PalindromeNum;
-
-			for (int next = 0; next < PalindromeLen / 2; next++) {
+			
+			//condition for check length + 1 in case of odd length [12321]
+			for (int next = 0; next < PalindromeLen / 2 + PalindromeLen % 2; next++) {
 				remainder = num % 10;
 				fPart += " " + remainder;
 				sPart = remainder + " " + sPart;
 				num = num / 10;
-			}
-
-			// Handle odd length
-			if (PalindromeLen % 2 == 1) {
-				fPart += " " + num % 10;
-				sPart = num % 10 + " " + sPart;
 			}
 
 			outMessage += "\n Given number " + PalindromeNum + " is a Palindrome!";
