@@ -1,4 +1,4 @@
-package com.mybank;
+package cw02.oop.com.mybank;
 
 public class BankAccount {
 	private String clientName;
@@ -25,10 +25,17 @@ public class BankAccount {
 		}
     }
 	
+	//Function over writing default toString
 	public String toString() {
 		return "clientName:" + clientName + " accountNumber:" + accountNumber + " balance:" + balance;
 	}
 	
+	//Function print
+	public String description() {
+		return "clientName:" + clientName + " accountNumber:" + accountNumber + " balance:" + balance;
+	}
+	
+	//Don't do in this way
 	public void printUserDetails() {
 		System.out.println("clientName:" + clientName + " accountNumber:" + accountNumber + " balance:" + balance);
     }
