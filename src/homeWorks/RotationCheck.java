@@ -110,6 +110,9 @@ public class RotationCheck {
 			}
 			firstNumberArray[0] = buf;
 
+			//testeddddddddddddddddddddddd
+			
+			
 			// Check if numbers equals
 			numberEqual = true;
 			for (int i = 0; i < secondNumberArray.length && numberEqual; i++) {
