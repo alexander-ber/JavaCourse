@@ -10,7 +10,7 @@ public class BankAccountApp {
 		account1.printUserDetails();
 		account1.withdrow(10.99f);
 		account1.printUserDetails();
-		account1.changeName("Miri Bar");
+		account1.setClientName("Miri Bar");
 		
 		//Don't do this way
 		account1.printUserDetails();	
@@ -18,7 +18,19 @@ public class BankAccountApp {
 		//Print returned string
 		System.out.println(account1.description());
 		
-		//Print default, use this call toString()
+		//Print default, use this call over writed function toString()
 		System.out.println(account1);
+		
+		//Calculate run time
+		//----------------
+		long start = System.currentTimeMillis();
+		for (int i = 0; i < 1_000_000; i++) {
+			//System.out.println(i);
+		}
+		long end = System.currentTimeMillis();
+		System.out.println("runs: " + (float)(end - start)/1000 + " sec.");
+		//----------------
+		
+		
 	}
 }
