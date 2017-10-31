@@ -112,5 +112,4 @@ public class Clock {
 		return("\n"+(hoursToShow<10? "0"+hoursToShow:hoursToShow)+":"+(minutes<10? "0"+minutes:minutes)+":"+(seconds<10? "0"+seconds:seconds)+"."
 		+(milliseconds<10? "00"+milliseconds:(milliseconds<100? "0"+milliseconds:milliseconds))+" "+postfix);
 	}
-
 }
