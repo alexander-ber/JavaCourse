@@ -10,10 +10,10 @@ public class UserHandler {
 		this.users = new User[maximumUsers];
 	}
    
-    public boolean addUser(String username, String password) {
+    public boolean addUser(String username, String password, String token) {
         int index = nextIndex();
         if (index >= 0) {
-            User newUser = new User(username, password);
+            User newUser = new User(username, password, token);
             this.users[index] = newUser;
             return true;
         }
