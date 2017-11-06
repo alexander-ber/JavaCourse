@@ -1,5 +1,4 @@
 package hw.oop.cards;
-import java.util.Arrays;
 import java.util.Random;
 
 import hw.oop.cards.Card;
@@ -10,7 +9,6 @@ public class Deck {
 	private static final Card[][] cardDeck = new Card[SUIT_SIZE][RANK_SIZE];
 	
 	public Deck() {
-		//Card card = new Card(Card.DIAMOND, Card.TWO);
 		for(int suit = 0; suit< SUIT_SIZE; suit++) {
 			for (int rank = 0; rank < RANK_SIZE; rank++) {
 				cardDeck[suit][rank] = new Card(suit ,rank); 
@@ -27,7 +25,7 @@ public class Deck {
 			for (int j = 0; j < players; j++) {
 				do {
 					randomSuit = rn.nextInt(SUIT_SIZE);
-					randomRank = rn.nextInt(SUIT_SIZE);					
+					randomRank = rn.nextInt(RANK_SIZE);					
 					if( cardDeckUsed[randomSuit][randomRank] != 1) {
 						gameDeck[i][j] = cardDeck[randomSuit][randomRank];
 						cardDeckUsed[randomSuit][randomRank] = 1;

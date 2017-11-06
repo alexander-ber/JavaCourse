@@ -6,13 +6,18 @@ public class DescApp {
 
 		Deck game = new Deck();
 		System.out.println(game);
+		int players = 3;
+		int cards = 10;
+		String mess = "";
 		
-		Card[][] newDeck = game.deal(5, 3);
-		for (int i = 0; i < 5; i++) {
-			for (int j = 0; j < 3; j++) {
-				System.out.print(newDeck[i][j]+ " ");
+		Card[][] newDeck = game.deal(cards, players);
+		for (int i = 0; i < players ; i++) {
+			mess += "\n Player " + (i+1) + ": ";
+			for (int j = 0; j < cards; j++) {
+				mess += newDeck[j][i] + " ";
 			}
-			System.out.println();
 		}				
+		
+		System.out.println(mess);
 	}
 }
