@@ -1,6 +1,6 @@
 /*
- * 
- * 1. class "Card"
+   
+   1. class "Card"
 	a. Use "char" for rank and suit
 	b. Use constants (static final variables)
 	c. Use final variables
@@ -61,28 +61,27 @@ public class Card {
 		
 		switch(this.suit) {
 			case DIAMONDS: result += "D";break;
-			case SPADES: result += "S";break;
-			case HEARTS: result += "H";break;
-			case CLUBS: result += "C";break;
+			case SPADES:   result += "S";break;
+			case HEARTS:   result += "H";break;
+			case CLUBS:    result += "C";break;
 		}
 		
 		switch(this.rank) {
-			case TWO: result += "2";break;
+			case TWO:   result += "2";break;
 			case THREE: result += "3";break;
-			case FOUR: result += "4";break;
-			case FIVE: result += "5";break;
-			case SIX: result += "6";break;
+			case FOUR:  result += "4";break;
+			case FIVE:  result += "5";break;
+			case SIX:   result += "6";break;
 			case SEVEN: result += "7";break;
 			case EIGHT: result += "8";break;
-			case NINE: result += "9";break;
-			case TEN: result += "10";break;
-			case JACK: result += "J";break;
+			case NINE:  result += "9";break;
+			case TEN:   result += "10";break;
+			case JACK:  result += "J";break;
 			case QUEEN: result += "Q";break;
-			case KING: result += "K";break;
-			case ACE: result += "A";break;
-		
+			case KING:  result += "K";break;
+			case ACE:   result += "A";break;
 		}
-		return result;
 
+		return result;
 	}	
 }
