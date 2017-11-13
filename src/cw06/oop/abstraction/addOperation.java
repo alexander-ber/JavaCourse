@@ -15,4 +15,8 @@ public class addOperation extends AbstractOperation {
 	public char getSymbol() {
 		return '+';
 	}
+	
+	public String say() {
+		return "I'm pluss!";
+	}
 }

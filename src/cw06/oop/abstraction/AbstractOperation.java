@@ -6,7 +6,7 @@ public abstract class AbstractOperation {
 	protected int operand2;
 	
 	abstract public int execute();
-	abstract public char getSymbol();
+	abstract protected char getSymbol();
 	
 	public AbstractOperation(int operand1, int operand2) {
 		this.operand1 = operand1;
