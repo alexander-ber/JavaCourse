@@ -1,4 +1,4 @@
-package hw.oop.bank;
+package cw06.oop.abstraction;
 
 public class AbstractOperation {
 
