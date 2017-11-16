@@ -1,9 +1,22 @@
 package cw06.oop.abstraction;
 
-public class addOperation {
-
-	public addOperation() {
-		// TODO Auto-generated constructor stub
+public class addOperation extends AbstractOperation {
+	
+	public addOperation(int operand1, int operand2) {
+		super(operand1, operand2);
 	}
 
+	@Override
+	public int execute() {
+		return (int)(operand1 + operand2);
+	}
+	
+	@Override
+	public char getSymbol() {
+		return '+';
+	}
+	
+	public String say() {
+		return "I'm pluss!";
+	}
 }
