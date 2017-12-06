@@ -1,7 +1,5 @@
 package hw.oop.drugs;
 
-import java.util.Iterator;
-
 public class Casino {
 	
 	private 	Player[] playersList;
